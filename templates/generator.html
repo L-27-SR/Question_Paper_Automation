@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="nav-container">
+        <nav>
+            <a href="/" class="nav-logo">QPG</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/generator" class="nav-link">Generator</a>
+                <a href="/paper" class="nav-link">Question Paper</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="generator-section">
+        <div class="form-container fade-in">
+            <h1 class="text-center mb-4">Generate Questions</h1>
+            <form id="questionForm" class="generator-form" action="/generate" method="POST">
+                <div class="form-group">
+                    <label class="form-label" for="semester">Semester</label>
+                    <input type="text" id="semester" name="semester" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="question">Question</label>
+                    <textarea id="question" name="question" class="form-textarea" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="answer">Answer</label>
+                    <textarea id="answer" name="answer" class="form-textarea" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="marks">Marks</label>
+                    <input type="number" id="marks" name="marks" class="form-input" required>
+                </div>
+                    
+                <div class="form-group">
+                    <label class="form-label" for="bt_level">Bloom's Taxonomy Level</label>
+                    <select id="bt_level" name="bt_level" class="form-select" required>
+                        <option value="BT1">BT1 - Remember</option>
+                        <option value="BT2">BT2 - Understand</option>
+                        <option value="BT3">BT3 - Apply</option>
+                        <option value="BT4">BT4 - Analyze</option>
+                        <option value="BT5">BT5 - Evaluate</option>
+                        <option value="BT6">BT6 - Create</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="co_level">Course Outcome Level</label>
+                    <input type="text" id="co_level" name="co_level" class="form-input" required>
+                </div>
+                
+                <button type="submit" class="button button-primary">Generate Similar Questions</button>
+            </form>
+        </div>
+
+        <div id="generatedQuestions" class="generated-questions fade-in">
+            <!-- Generated questions will be displayed here -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/generator.js') }}"></script>
+</body>
+</html>

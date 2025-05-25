@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Paper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="nav-container">
+        <nav>
+            <a href="/" class="nav-logo">QPG</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/generator" class="nav-link">Generator</a>
+                <a href="/paper" class="nav-link">Question Paper</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="paper-container fade-in">
+        <div class="paper-header">
+            <h1 class="paper-title">Question Paper</h1>
+            <div class="paper-meta">
+                <div class="meta-card">
+                    <div class="meta-label">Total Questions</div>
+                    <div class="meta-value" id="totalQuestions">0</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-label">Total Marks</div>
+                    <div class="meta-value" id="totalMarks">0</div>
+                </div>
+            </div>
+            <div class="paper-actions">
+                <button id="downloadPaper" class="button button-primary">Download PDF</button>
+                <button id="clearPaper" class="button button-secondary">Clear All</button>
+            </div>
+        </div>
+
+        <div class="paper-content">
+            <div id="questionPaper" class="question-list">
+                <!-- Questions will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <template id="questionTemplate">
+        <div class="question-item card fade-in">
+            <div class="question-header">
+                <div class="question-info">
+                    <span class="question-number"></span>
+                    <span class="question-marks"></span>
+                </div>
+                <button class="button button-error remove-question" title="Remove Question">Remove</button>
+            </div>
+            <div class="question-content">
+                <div class="question-text"></div>
+                <div class="answer-section">
+                    <h4 class="answer-label">Answer:</h4>
+                    <div class="answer-text"></div>
+                </div>
+            </div>
+            <div class="question-meta">
+                <span class="meta-tag">BT Level: <span class="bt-level"></span></span>
+                <span class="meta-tag">CO: <span class="co-level"></span></span>
+            </div>
+        </div>
+    </template>
+
+    <script src="{{ url_for('static', filename='js/paper.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Paper Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="nav-container">
+        <nav>
+            <a href="/" class="nav-logo">QPG</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/generator" class="nav-link">Generator</a>
+                <a href="/paper" class="nav-link">Question Paper</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content fade-in">
+            <h1>Create Professional<br>Question Papers</h1>
+            <p class="hero-subtitle">Generate, customize, and manage academic assessments with our AI-powered platform</p>
+            <div class="hero-buttons">
+                <a href="/generator" class="button button-primary">Start Generating</a>
+                <a href="/paper" class="button button-secondary">View Papers</a>
+            </div>
+        </div>
+        <div class="hero-stats fade-in">
+            <div class="stat-card">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Bloom's Levels</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">AI</div>
+                <div class="stat-label">Powered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Customizable</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="features">
+            <h2 class="section-title">Why Choose Our Platform?</h2>
+            <div class="feature-grid">
+                <div class="card fade-in">
+                    <div class="card-icon">🤖</div>
+                    <h3>AI-Powered Generation</h3>
+                    <p>Create similar questions while maintaining consistent difficulty levels</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📊</div>
+                    <h3>Smart Management</h3>
+                    <p>Organize questions by subject, semester, and learning outcomes</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📝</div>
+                    <h3>Professional Format</h3>
+                    <p>Generate well-structured question papers with proper formatting</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
